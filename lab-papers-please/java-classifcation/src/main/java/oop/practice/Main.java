@@ -12,14 +12,13 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) throws IOException {
     ObjectMapper mapper = new ObjectMapper();
-    File inputFile = new File("src/main/resources/test-input.json");
+    File inputFile = new File("./lab-papers-please/java-classifcation/src/main/resources/test-input.json");
     JsonNode data = mapper.readTree(inputFile).get("data");
 
     Universe starWars = new Universe("starWars", new ArrayList<>());
     Universe hitchhikers = new Universe("hitchHiker", new ArrayList<>());
     Universe marvel = new Universe("marvel", new ArrayList<>());
     Universe rings = new Universe("rings", new ArrayList<>());
-
     Scanner scanner = new Scanner(System.in);
 
     for (JsonNode entry : data) {
