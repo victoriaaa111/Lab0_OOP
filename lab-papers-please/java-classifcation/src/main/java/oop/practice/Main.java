@@ -71,6 +71,10 @@ public class Main {
     System.out.println("\nPlanet: "+individual1.getPlanet());
     System.out.println("\nTraits: "+individual1.getTraits());
 
+    ReadPrintFile inputFile = new ReadPrintFile();
+    String inputFilePath = "./lab-papers-please/java-classifcation/src/main/resources/test-input.json";
+    inputFile.ReadFile(inputFilePath);
+    inputFile.PrintFile(inputFilePath);
   }
 }
 
