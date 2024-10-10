@@ -27,7 +27,7 @@ public class IndividualTraits {
         return id;
     }
 
-    public boolean isHumanoid() {
+    public boolean getIsHumanoid() {
         return isHumanoid;
     }
 

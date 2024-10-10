@@ -66,20 +66,20 @@ public class Main {
     individual1.setPlanet("Kashyyk");
     individual1.setTraits(traits1);
 
-    System.out.println("\nIndividual nr. " + individual1.getId() + " :");
-    System.out.println("\nId: "+individual1.getId());
-    System.out.println("\nAge: "+individual1.getAge());
-    System.out.println("\nHumanoid: "+individual1.isHumanoid());
-    System.out.println("\nPlanet: "+individual1.getPlanet());
-    System.out.println("\nTraits: "+individual1.getTraits());
+//    System.out.println("\nIndividual nr. " + individual1.getId() + " :");
+//    System.out.println("\nId: "+individual1.getId());
+//    System.out.println("\nAge: "+individual1.getAge());
+//    System.out.println("\nHumanoid: "+individual1.getIsHumanoid());
+//    System.out.println("\nPlanet: "+individual1.getPlanet());
+//    System.out.println("\nTraits: "+individual1.getTraits());
 
     ReadPrintFile inputFile = new ReadPrintFile();
     String inputFilePath = "./lab-papers-please/java-classifcation/src/main/resources/test-input.json";
     inputFile.ReadFile(inputFilePath);
-    inputFile.PrintFile();
     inputFile.PrintEachObject();
-    inputFile.PrintObjectById(0);
-    inputFile.PrintObjectById(20);
+//    inputFile.PrintFile();
+//   inputFile.PrintObjectById(0);
+//    inputFile.PrintObjectById(20);
   }
 }
 
