@@ -5,6 +5,8 @@ package oop.practice;
 
 //import java.io.File;
 //import java.io.IOException;
+import com.fasterxml.jackson.databind.JsonNode;
+
 import java.util.ArrayList;
 //import java.util.List;
 //import java.util.Scanner;
@@ -74,7 +76,10 @@ public class Main {
     ReadPrintFile inputFile = new ReadPrintFile();
     String inputFilePath = "./lab-papers-please/java-classifcation/src/main/resources/test-input.json";
     inputFile.ReadFile(inputFilePath);
-    inputFile.PrintFile(inputFilePath);
+    inputFile.PrintFile();
+    inputFile.PrintEachObject();
+    inputFile.PrintObjectById(0);
+    inputFile.PrintObjectById(20);
   }
 }
 
