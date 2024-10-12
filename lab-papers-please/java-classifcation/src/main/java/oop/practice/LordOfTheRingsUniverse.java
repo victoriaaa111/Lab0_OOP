@@ -2,7 +2,7 @@ package oop.practice;
 import java.util.ArrayList;
 
 public class LordOfTheRingsUniverse {
-    private ArrayList<IndividualTraits> individuals;
+    private final ArrayList<IndividualTraits> individuals;
     public LordOfTheRingsUniverse() {
         individuals = new ArrayList<>();
     }
@@ -10,7 +10,7 @@ public class LordOfTheRingsUniverse {
     public boolean checkElf(IndividualTraits individual) {
         //elf
         if(!individual.getTraits().isEmpty()) {
-            ArrayList<String> traits = new ArrayList<String>();
+            ArrayList<String> traits = new ArrayList<>();
             traits.add("BLONDE");
             traits.add("POINTY_EARS");
 
@@ -47,7 +47,7 @@ public class LordOfTheRingsUniverse {
 
     public boolean checkDwarf(IndividualTraits individual) {
         if(!individual.getTraits().isEmpty()) {
-            ArrayList<String> traits = new ArrayList<String>();
+            ArrayList<String> traits = new ArrayList<>();
             traits.add("SHORT");
             traits.add("BULKY");
 
@@ -65,7 +65,7 @@ public class LordOfTheRingsUniverse {
             }else {
                 return false;
             }
-            }else if(individual.getPlanet()!= null) { //dwarf
+        }else if(individual.getPlanet()!= null) { //dwarf
             String planet = individual.getPlanet();
             if (planet.equals("Earth")) {
                 individuals.add(individual);
@@ -73,34 +73,15 @@ public class LordOfTheRingsUniverse {
             } else {
                 return false;
             }
-            }else if(individual.getAge()>0 && individual.getAge() <= 200 && individual.getIsHumanoid()) {
-
+        }else if(individual.getAge()>0 && individual.getAge() <= 200 && individual.getIsHumanoid()) {
             individuals.add(individual);
             return true;
-        }else{
-            return false;
+            } else{
+                return false;
         }
     }
-    public void PrintLordOfTheRingsUniverse() {
-        for(IndividualTraits ind:individuals) {
-            System.out.println("\n------------");
-            System.out.println("Lord Of The Rings Universe");
-            System.out.println("\n------------");
-            System.out.println("\nIndividual nr. " + ind.getId() + ":");
-            System.out.println("\nId: "+ind.getId());
-            System.out.println("\nAge: "+ind.getAge());
-            System.out.println("\nHumanoid: "+ind.getIsHumanoid());
-            System.out.println("\nPlanet: "+ind.getPlanet());
-            if(ind.getTraits().isEmpty()){
-                System.out.println("\n No traits");
-            }else{
-                System.out.println("\nTraits: ");
-                for(String trait : ind.getTraits()) {
-                    System.out.println("\n - " + trait);
-                }
-            }
-        }
-    }
+
+    //getter for list of individuals from Lord Of The Rings
     public ArrayList<IndividualTraits> getIndividuals() {
         return individuals;
     }

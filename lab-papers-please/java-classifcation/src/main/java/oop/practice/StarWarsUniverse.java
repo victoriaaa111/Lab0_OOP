@@ -2,7 +2,7 @@ package oop.practice;
 import java.util.ArrayList;
 
 public class StarWarsUniverse {
-    private ArrayList<IndividualTraits> individuals;
+    private final ArrayList<IndividualTraits> individuals;
 
     public StarWarsUniverse() {
         individuals = new ArrayList<>();
@@ -18,7 +18,7 @@ public class StarWarsUniverse {
                 return false;
             }
         }else if(!individual.getTraits().isEmpty()) {
-            ArrayList<String> traits = new ArrayList<String>();
+            ArrayList<String> traits = new ArrayList<>();
             traits.add("SHORT");
             traits.add("TALL");
             traits.add("HAIRY");
@@ -59,26 +59,6 @@ public class StarWarsUniverse {
         }
     }
 
-    public void PrintStarWarsUniverse() {
-        for(IndividualTraits ind:individuals) {
-            System.out.println("\n------------");
-            System.out.println("Star Wars Universe");
-            System.out.println("\n------------");
-            System.out.println("\nIndividual nr. " + ind.getId() + ":");
-            System.out.println("\nId: "+ind.getId());
-            System.out.println("\nAge: "+ind.getAge());
-            System.out.println("\nHumanoid: "+ind.getIsHumanoid());
-            System.out.println("\nPlanet: "+ind.getPlanet());
-            if(ind.getTraits().isEmpty()){
-                System.out.println("\n No traits");
-            }else{
-                System.out.println("\nTraits: ");
-                for(String trait : ind.getTraits()) {
-                    System.out.println("\n - " + trait);
-                }
-            }
-        }
-    }
     public ArrayList<IndividualTraits> getIndividuals() {
         return individuals;
     }

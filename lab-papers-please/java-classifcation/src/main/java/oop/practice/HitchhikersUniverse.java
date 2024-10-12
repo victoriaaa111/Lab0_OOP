@@ -2,7 +2,7 @@ package oop.practice;
 import java.util.ArrayList;
 
 public class HitchhikersUniverse {
-    private ArrayList<IndividualTraits> individuals;
+    private final ArrayList<IndividualTraits> individuals;
     public HitchhikersUniverse() {
         individuals = new ArrayList<>();
     }
@@ -17,7 +17,7 @@ public class HitchhikersUniverse {
                 return false;
             }
         }else if(!individual.getTraits().isEmpty()) {
-            ArrayList<String> traits = new ArrayList<String>();
+            ArrayList<String> traits = new ArrayList<>();
             traits.add("EXTRA_ARMS");
             traits.add("EXTRA_HEAD");
 
@@ -54,7 +54,7 @@ public class HitchhikersUniverse {
                 return false;
             }
         }else if(!individual.getTraits().isEmpty()) {
-            ArrayList<String> traits = new ArrayList<String>();
+            ArrayList<String> traits = new ArrayList<>();
             traits.add("GREEN");
             traits.add("BULKY");
 
@@ -81,26 +81,6 @@ public class HitchhikersUniverse {
         }
     }
 
-    public void PrintHitchhikersUniverse() {
-        for(IndividualTraits ind:individuals) {
-            System.out.println("\n------------");
-            System.out.println("Hitchhiker Universe");
-            System.out.println("\n------------");
-            System.out.println("\nIndividual nr. " + ind.getId() + ":");
-            System.out.println("\nId: "+ind.getId());
-            System.out.println("\nAge: "+ind.getAge());
-            System.out.println("\nHumanoid: "+ind.getIsHumanoid());
-            System.out.println("\nPlanet: "+ind.getPlanet());
-            if(ind.getTraits().isEmpty()){
-                System.out.println("\n No traits");
-            }else{
-                System.out.println("\nTraits: ");
-                for(String trait : ind.getTraits()) {
-                    System.out.println("\n - " + trait);
-                }
-            }
-        }
-    }
     public ArrayList<IndividualTraits> getIndividuals() {
         return individuals;
     }

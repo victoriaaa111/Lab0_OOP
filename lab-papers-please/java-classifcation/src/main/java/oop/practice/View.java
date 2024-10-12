@@ -70,8 +70,8 @@ public class View {
 
     // class represents the universe output
     private static class UniverseRecords {
-        private String name;
-        private List<IndividualTraits> individuals;
+        private final String name;
+        private final List<IndividualTraits> individuals;
 
         public UniverseRecords(String name, List<IndividualTraits> individuals) {
             this.name = name;
