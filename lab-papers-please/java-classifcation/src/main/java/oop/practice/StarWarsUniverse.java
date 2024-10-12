@@ -79,5 +79,7 @@ public class StarWarsUniverse {
             }
         }
     }
-
+    public ArrayList<IndividualTraits> getIndividuals() {
+        return individuals;
+    }
 }

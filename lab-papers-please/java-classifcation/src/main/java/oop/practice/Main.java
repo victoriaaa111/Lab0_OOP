@@ -1,15 +1,14 @@
 package oop.practice;
 
-//import com.fasterxml.jackson.databind.JsonNode;
-//import com.fasterxml.jackson.databind.ObjectMapper;
-
-//import java.io.File;
-//import java.io.IOException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
+import java.io.IOException;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import java.util.ArrayList;
-//import java.util.List;
-//import java.util.Scanner;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
   /*
@@ -113,7 +112,19 @@ public class Main {
     hitchhikersUniverse.PrintHitchhikersUniverse();
     lordOfTheRingsUniverse.PrintLordOfTheRingsUniverse();
 
+    // Print results for each universe
+    starWarsUniverse.PrintStarWarsUniverse();
+    marvelUniverse.PrintMarvelUniverse();
+    hitchhikersUniverse.PrintHitchhikersUniverse();
+    lordOfTheRingsUniverse.PrintLordOfTheRingsUniverse();
 
+    View view = new View();
+
+    // output to json
+    view.printToJson("starwars", starWarsUniverse.getIndividuals(), "./lab-papers-please/output/starwars.json");
+    view.printToJson("hitchhiker", hitchhikersUniverse.getIndividuals(), "./lab-papers-please/output/hitchhiker.json");
+    view.printToJson("lordoftherings", lordOfTheRingsUniverse.getIndividuals(), "./lab-papers-please/output/rings.json");
+    view.printToJson("marvel", marvelUniverse.getIndividuals(), "./lab-papers-please/output/marvel.json");
 
 //    inputFile.PrintEachObject();
 //    inputFile.PrintIds();
@@ -125,9 +136,3 @@ public class Main {
   }
 }
 
-/*
- record Universe(
-    String name,
-    List<JsonNode> individuals
-) { }
- */

@@ -43,6 +43,7 @@ public class MarvelUniverse {
         }
     }
 
+
     public void PrintMarvelUniverse() {
         for(IndividualTraits ind:individuals) {
             System.out.println("\n------------");
@@ -64,4 +65,7 @@ public class MarvelUniverse {
         }
     }
 
+    public ArrayList<IndividualTraits> getIndividuals() {
+        return individuals;
+    }
 }

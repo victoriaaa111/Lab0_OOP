@@ -101,5 +101,7 @@ public class LordOfTheRingsUniverse {
             }
         }
     }
-
+    public ArrayList<IndividualTraits> getIndividuals() {
+        return individuals;
+    }
 }

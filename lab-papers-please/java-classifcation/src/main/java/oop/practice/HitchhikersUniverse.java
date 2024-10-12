@@ -101,6 +101,8 @@ public class HitchhikersUniverse {
             }
         }
     }
-
+    public ArrayList<IndividualTraits> getIndividuals() {
+        return individuals;
+    }
 }
 
