@@ -8,42 +8,60 @@ public class MarvelUniverse {
     }
 
     public boolean checkIndividual(IndividualTraits individual) {
-        String planet = individual.getPlanet();
-        ArrayList<String> traits = individual.getTraits();
-        int age = individual.getAge();
-
-        if (planet != null && (planet.equals("Kashyyk") || planet.equals("Endor"))) {
-            individuals.add(individual);
-            return true;
-        }
-
-        if (traits != null) {
-            ArrayList<String> validTraits = new ArrayList<>();
-            validTraits.add("SHORT");
-            validTraits.add("TALL");
-            validTraits.add("HAIRY");
-
-            for (String trait : traits) {
-                if (!validTraits.contains(trait)) return false;
-            }
-
-            if (traits.contains("HAIRY") || (traits.contains("TALL") && age <= 400) || (traits.contains("SHORT") && age <= 60)) {
+        if(individual.getPlanet()!= null) {
+            String planet = individual.getPlanet();
+            if(planet.equals("Asgard")) {
                 individuals.add(individual);
                 return true;
+            }else{
+                return false;
             }
+        }else if(individual.getTraits() != null) {
+            ArrayList<String> traits = new ArrayList<String>();
+            traits.add("BLONDE");
+            traits.add("TALL");
+            for(String trait : individual.getTraits()) {
+                if(!traits.contains(trait)) {
+                    return false;
+                }
+            }
+            if(individual.getTraits().contains("BLONDE") && individual.getTraits().contains("TALL")) {
+                individuals.add(individual);
+                return true;
+            }else if((individual.getTraits().contains("BLONDE") || individual.getTraits().contains("TALL")) && individual.getAge() <=5000) {
+                individuals.add(individual);
+                return true;
+            }else{
+                return false;
+            }
+        }else if(individual.getAge()>0 && individual.getAge() <= 5000 && !individual.getIsHumanoid()) {
 
-            return false;
-        }
-
-        if (age >= 0 && age <= 400 && !individual.getIsHumanoid()) {
             individuals.add(individual);
             return true;
+        }else{
+            return false;
         }
-
-        return false;
     }
 
-    public ArrayList<IndividualTraits> getIndividuals() {
-        return individuals;
+    public void PrintMarvelUniverse() {
+        for(IndividualTraits ind:individuals) {
+            System.out.println("\n------------");
+            System.out.println("Marvel Universe");
+            System.out.println("\n------------");
+            System.out.println("\nIndividual nr. " + ind.getId() + ":");
+            System.out.println("\nId: "+ind.getId());
+            System.out.println("\nAge: "+ind.getAge());
+            System.out.println("\nHumanoid: "+ind.getIsHumanoid());
+            System.out.println("\nPlanet: "+ind.getPlanet());
+            if(ind.getTraits().isEmpty()){
+                System.out.println("\n No traits");
+            }else{
+                System.out.println("\nTraits: ");
+                for(String trait : ind.getTraits()) {
+                    System.out.println("\n - " + trait);
+                }
+            }
+        }
     }
+
 }

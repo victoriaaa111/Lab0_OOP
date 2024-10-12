@@ -77,28 +77,34 @@ public class Main {
     String inputFilePath = "./lab-papers-please/java-classifcation/src/main/resources/input.json";
     inputFile.ReadFile(inputFilePath);
     StarWarsUniverse starWarsUniverse = new StarWarsUniverse();
+    MarvelUniverse marvelUniverse = new MarvelUniverse();
+    HitchhikersUniverse hitchhikersUniverse = new HitchhikersUniverse();
     for(IndividualTraits individual:inputFile.getIndividualTraits()){
       boolean isStarWars = starWarsUniverse.checkIndividual(individual);
       if(isStarWars){
         continue;
       }
-    }
-    for(IndividualTraits ind:starWarsUniverse.getStarWarsIndividuals()){
-      System.out.println("\n------------");
-      System.out.println("\nIndividual nr. " + ind.getId() + ":");
-      System.out.println("\nId: "+ind.getId());
-      System.out.println("\nAge: "+ind.getAge());
-      System.out.println("\nHumanoid: "+ind.getIsHumanoid());
-      System.out.println("\nPlanet: "+ind.getPlanet());
-      if(ind.getTraits().isEmpty()){
-        System.out.println("\n No traits");
-      }else{
-        System.out.println("\nTraits: ");
-        for(String trait : ind.getTraits()) {
-          System.out.println("\n - " + trait);
-        }
+
+      boolean isMarvel = marvelUniverse.checkIndividual(individual);
+      if(isMarvel){
+        continue;
+      }
+
+      boolean isVogons = hitchhikersUniverse.checkVogons(individual);
+      if(isVogons){
+        continue;
+      }
+
+      boolean isBetelgeusean = hitchhikersUniverse.checkBetelgeusian(individual);
+      if(isBetelgeusean){
+        continue;
       }
     }
+    starWarsUniverse.PrintStarWarsUniverse();
+    marvelUniverse.PrintMarvelUniverse();
+    hitchhikersUniverse.PrintHitchhikersUniverse();
+
+
 
 //    inputFile.PrintEachObject();
 //    inputFile.PrintIds();
