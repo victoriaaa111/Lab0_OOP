@@ -17,7 +17,7 @@ public class StarWarsUniverse {
             }else{
                 return false;
             }
-        }else if(individual.getTraits() != null) {
+        }else if(!individual.getTraits().isEmpty()) {
             ArrayList<String> traits = new ArrayList<String>();
             traits.add("SHORT");
             traits.add("TALL");

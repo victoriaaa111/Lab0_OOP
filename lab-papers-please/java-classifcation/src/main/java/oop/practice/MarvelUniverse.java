@@ -16,7 +16,7 @@ public class MarvelUniverse {
             }else{
                 return false;
             }
-        }else if(individual.getTraits() != null) {
+        }else if(!individual.getTraits().isEmpty()) {
             ArrayList<String> traits = new ArrayList<String>();
             traits.add("BLONDE");
             traits.add("TALL");

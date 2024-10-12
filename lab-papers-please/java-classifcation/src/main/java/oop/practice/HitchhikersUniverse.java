@@ -16,7 +16,7 @@ public class HitchhikersUniverse {
             }else{
                 return false;
             }
-        }else if(individual.getTraits() != null) {
+        }else if(!individual.getTraits().isEmpty()) {
             ArrayList<String> traits = new ArrayList<String>();
             traits.add("EXTRA_ARMS");
             traits.add("EXTRA_HEAD");
@@ -53,7 +53,7 @@ public class HitchhikersUniverse {
             }else{
                 return false;
             }
-        }else if(individual.getTraits() != null) {
+        }else if(!individual.getTraits().isEmpty()) {
             ArrayList<String> traits = new ArrayList<String>();
             traits.add("GREEN");
             traits.add("BULKY");

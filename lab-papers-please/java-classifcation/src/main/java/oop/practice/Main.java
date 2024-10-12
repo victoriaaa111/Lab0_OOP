@@ -79,6 +79,8 @@ public class Main {
     StarWarsUniverse starWarsUniverse = new StarWarsUniverse();
     MarvelUniverse marvelUniverse = new MarvelUniverse();
     HitchhikersUniverse hitchhikersUniverse = new HitchhikersUniverse();
+    LordOfTheRingsUniverse lordOfTheRingsUniverse = new LordOfTheRingsUniverse();
+
     for(IndividualTraits individual:inputFile.getIndividualTraits()){
       boolean isStarWars = starWarsUniverse.checkIndividual(individual);
       if(isStarWars){
@@ -99,10 +101,17 @@ public class Main {
       if(isBetelgeusean){
         continue;
       }
+
+      boolean isElf = lordOfTheRingsUniverse.checkElf(individual);
+      if(isElf){
+        continue;
+      }
+      lordOfTheRingsUniverse.checkDwarf(individual);
     }
     starWarsUniverse.PrintStarWarsUniverse();
     marvelUniverse.PrintMarvelUniverse();
     hitchhikersUniverse.PrintHitchhikersUniverse();
+    lordOfTheRingsUniverse.PrintLordOfTheRingsUniverse();
 
 
 
