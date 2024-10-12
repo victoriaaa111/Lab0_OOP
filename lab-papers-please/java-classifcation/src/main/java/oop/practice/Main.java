@@ -56,15 +56,15 @@ public class Main {
 
 
   public static void main(String[] args){
-    IndividualTraits individual1 = new IndividualTraits();
-    ArrayList<String> traits1 = new ArrayList<>();
-    traits1.add("HAIRY");
-    traits1.add("TALL");
-    individual1.setId(1);
-    individual1.setAge(25);
-    individual1.setHumanoid(false);
-    individual1.setPlanet("Kashyyk");
-    individual1.setTraits(traits1);
+//    IndividualTraits individual1 = new IndividualTraits();
+//    ArrayList<String> traits1 = new ArrayList<>();
+//    traits1.add("HAIRY");
+//    traits1.add("TALL");
+//    individual1.setId(1);
+//    individual1.setAge(25);
+//    individual1.setHumanoid(false);
+//    individual1.setPlanet("Kashyyk");
+//    individual1.setTraits(traits1);
 
 //    System.out.println("\nIndividual nr. " + individual1.getId() + " :");
 //    System.out.println("\nId: "+individual1.getId());
@@ -77,6 +77,9 @@ public class Main {
     String inputFilePath = "./lab-papers-please/java-classifcation/src/main/resources/test-input.json";
     inputFile.ReadFile(inputFilePath);
     inputFile.PrintEachObject();
+    inputFile.PrintIds();
+    inputFile.PrintOdd();
+    inputFile.PrintEven();
 //    inputFile.PrintFile();
 //   inputFile.PrintObjectById(0);
 //    inputFile.PrintObjectById(20);

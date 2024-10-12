@@ -9,7 +9,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 public class ReadPrintFile {
-    private JsonNode rootNode;
     private ArrayList<IndividualTraits> individuals = new ArrayList<>();
 
     //method to read data from file
@@ -17,7 +16,7 @@ public class ReadPrintFile {
         try{
             ObjectMapper mapper = new ObjectMapper();
             File jsonFile = new File(FilePath);
-            rootNode = mapper.readTree(jsonFile);
+            JsonNode rootNode = mapper.readTree(jsonFile);
             if(rootNode != null && rootNode.has("data")){
                 JsonNode data = rootNode.get("data");
                 for(JsonNode individual : data){
@@ -52,15 +51,6 @@ public class ReadPrintFile {
     }
 
 
-    //method to print data from file
-//    public void PrintFile() {
-//        if(rootNode != null) {
-//            System.out.println(rootNode.toPrettyString());
-//        }else{
-//            System.out.println("No data in JSON file");
-//        }
-//    }
-
     public void PrintEachObject(){
         if(individuals.isEmpty()){
             System.out.println("No data in JSON file");
@@ -73,13 +63,82 @@ public class ReadPrintFile {
                 System.out.println("\nAge: "+ind.getAge());
                 System.out.println("\nHumanoid: "+ind.getIsHumanoid());
                 System.out.println("\nPlanet: "+ind.getPlanet());
-                System.out.println("\nTraits: ");
-                for(String trait : ind.getTraits()) {
-                    System.out.println("\n - " + trait);
+                if(ind.getTraits().isEmpty()){
+                    System.out.println("\n No traits");
+                }else{
+                    System.out.println("\nTraits: ");
+                    for(String trait : ind.getTraits()) {
+                        System.out.println("\n - " + trait);
+                    }
                 }
+
             }
         }
         }
+
+    public void PrintIds(){
+        if(individuals.isEmpty()){
+            System.out.println("No data in JSON file");
+        }else{
+            System.out.println("\nAll Ids:");
+            for(IndividualTraits ind : individuals){
+                System.out.println("\nId: "+ ind.getId());
+            }
+        }
+    }
+
+    public void PrintOdd(){
+        if(individuals.isEmpty()){
+            System.out.println("No data in JSON file");
+        }else{
+            System.out.println("\n------------");
+            System.out.println("\nOdd Ids:");
+            for(IndividualTraits ind : individuals){
+                if(ind.getId() % 2 == 1){
+                    System.out.println("\n------------");
+                    System.out.println("\nIndividual nr. " + ind.getId() + ":");
+                    System.out.println("\nId: "+ind.getId());
+                    System.out.println("\nAge: "+ind.getAge());
+                    System.out.println("\nHumanoid: "+ind.getIsHumanoid());
+                    System.out.println("\nPlanet: "+ind.getPlanet());
+                    if(ind.getTraits().isEmpty()){
+                        System.out.println("\n No traits");
+                    }else{
+                        System.out.println("\nTraits: ");
+                        for(String trait : ind.getTraits()) {
+                            System.out.println("\n - " + trait);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    public void PrintEven(){
+        if(individuals.isEmpty()){
+            System.out.println("No data in JSON file");
+        }else{
+            System.out.println("\n------------");
+            System.out.println("\nEven Ids:");
+            for(IndividualTraits ind : individuals){
+                if(ind.getId() % 2 == 0){
+                    System.out.println("\n------------");
+                    System.out.println("\nIndividual nr. " + ind.getId() + ":");
+                    System.out.println("\nId: "+ind.getId());
+                    System.out.println("\nAge: "+ind.getAge());
+                    System.out.println("\nHumanoid: "+ind.getIsHumanoid());
+                    System.out.println("\nPlanet: "+ind.getPlanet());
+                    if(ind.getTraits().isEmpty()){
+                        System.out.println("\n No traits");
+                    }else{
+                        System.out.println("\nTraits: ");
+                        for(String trait : ind.getTraits()) {
+                            System.out.println("\n - " + trait);
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 
 
@@ -123,4 +182,4 @@ public class ReadPrintFile {
 //        }
 //    }
 
-    }
+}
