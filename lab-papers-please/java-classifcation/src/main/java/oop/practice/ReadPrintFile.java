@@ -9,9 +9,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 public class ReadPrintFile {
-    private ArrayList<IndividualTraits> individuals = new ArrayList<>();
+    private ArrayList<IndividualTraits> individuals = new ArrayList<>(); //list to store objects
 
-    //method to read data from file
+    //method to read data from file and store objects in list
     public void ReadFile(String FilePath) {
         try{
             ObjectMapper mapper = new ObjectMapper();
@@ -21,6 +21,7 @@ public class ReadPrintFile {
                 JsonNode data = rootNode.get("data");
                 for(JsonNode individual : data){
                     IndividualTraits ind = new IndividualTraits();
+                    //set data
                     if(individual.has("id")){
                         ind.setId(individual.get("id").asInt());
                     }
@@ -40,7 +41,7 @@ public class ReadPrintFile {
                         }
                         ind.setTraits(traitList);
                     }
-                    individuals.add(ind);
+                    individuals.add(ind); //adds object to list
                 }
             }else{
                 System.out.println("No data in JSON file");
@@ -51,6 +52,7 @@ public class ReadPrintFile {
     }
 
 
+    //prints all individual records
     public void PrintEachObject(){
         if(individuals.isEmpty()){
             System.out.println("No data in JSON file");
@@ -76,6 +78,7 @@ public class ReadPrintFile {
         }
         }
 
+    //prints all ids
     public void PrintIds(){
         if(individuals.isEmpty()){
             System.out.println("No data in JSON file");
@@ -87,6 +90,7 @@ public class ReadPrintFile {
         }
     }
 
+    //prints records with odd ids
     public void PrintOdd(){
         if(individuals.isEmpty()){
             System.out.println("No data in JSON file");
@@ -113,6 +117,8 @@ public class ReadPrintFile {
             }
         }
     }
+
+    //prints records with even ids
     public void PrintEven(){
         if(individuals.isEmpty()){
             System.out.println("No data in JSON file");
@@ -138,6 +144,10 @@ public class ReadPrintFile {
                 }
             }
         }
+    }
+
+    public ArrayList<IndividualTraits> getIndividualTraits() {
+        return individuals;
     }
 
 

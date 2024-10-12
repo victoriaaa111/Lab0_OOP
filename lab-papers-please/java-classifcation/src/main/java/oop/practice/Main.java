@@ -74,12 +74,36 @@ public class Main {
 //    System.out.println("\nTraits: "+individual1.getTraits());
 
     ReadPrintFile inputFile = new ReadPrintFile();
-    String inputFilePath = "./lab-papers-please/java-classifcation/src/main/resources/test-input.json";
+    String inputFilePath = "./lab-papers-please/java-classifcation/src/main/resources/input.json";
     inputFile.ReadFile(inputFilePath);
-    inputFile.PrintEachObject();
-    inputFile.PrintIds();
-    inputFile.PrintOdd();
-    inputFile.PrintEven();
+    StarWarsUniverse starWarsUniverse = new StarWarsUniverse();
+    for(IndividualTraits individual:inputFile.getIndividualTraits()){
+      boolean isStarWars = starWarsUniverse.checkIndividual(individual);
+      if(isStarWars){
+        continue;
+      }
+    }
+    for(IndividualTraits ind:starWarsUniverse.getStarWarsIndividuals()){
+      System.out.println("\n------------");
+      System.out.println("\nIndividual nr. " + ind.getId() + ":");
+      System.out.println("\nId: "+ind.getId());
+      System.out.println("\nAge: "+ind.getAge());
+      System.out.println("\nHumanoid: "+ind.getIsHumanoid());
+      System.out.println("\nPlanet: "+ind.getPlanet());
+      if(ind.getTraits().isEmpty()){
+        System.out.println("\n No traits");
+      }else{
+        System.out.println("\nTraits: ");
+        for(String trait : ind.getTraits()) {
+          System.out.println("\n - " + trait);
+        }
+      }
+    }
+
+//    inputFile.PrintEachObject();
+//    inputFile.PrintIds();
+//    inputFile.PrintOdd();
+//    inputFile.PrintEven();
 //    inputFile.PrintFile();
 //   inputFile.PrintObjectById(0);
 //    inputFile.PrintObjectById(20);
