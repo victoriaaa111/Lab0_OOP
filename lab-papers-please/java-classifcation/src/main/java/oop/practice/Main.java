@@ -1,11 +1,13 @@
 package oop.practice;
 
+import java.util.ArrayList;
+
 public class Main {
 
   public static void main(String[] args){
     ReadPrintFile inputFile = new ReadPrintFile();
     String inputFilePath = "./lab-papers-please/java-classifcation/src/main/resources/input.json";
-    inputFile.ReadFile(inputFilePath);
+    ArrayList<IndividualTraits> indivs = inputFile.ReadFile(inputFilePath);
 
     //create universe objects
     StarWarsUniverse starWarsUniverse = new StarWarsUniverse();
@@ -14,7 +16,7 @@ public class Main {
     LordOfTheRingsUniverse lordOfTheRingsUniverse = new LordOfTheRingsUniverse();
 
     //sort by universes
-    for(IndividualTraits individual:inputFile.getIndividualTraits()){
+    for(IndividualTraits individual:indivs){
       boolean isStarWars = starWarsUniverse.checkIndividual(individual);
       if(isStarWars){
         continue; //if is part of starwars skips next universes and goes to next record

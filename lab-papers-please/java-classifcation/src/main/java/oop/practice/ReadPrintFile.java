@@ -9,10 +9,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 public class ReadPrintFile {
-    private ArrayList<IndividualTraits> individuals = new ArrayList<>(); //list to store objects
+    // todo remove the variable
 
     //method to read data from file and store objects in list
-    public void ReadFile(String FilePath) {
+    public ArrayList<IndividualTraits> ReadFile(String FilePath) {
+        ArrayList<IndividualTraits> individuals = new ArrayList<>(); //list to store objects
+
         try{
             ObjectMapper mapper = new ObjectMapper();
             File jsonFile = new File(FilePath);
@@ -49,9 +51,6 @@ public class ReadPrintFile {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public ArrayList<IndividualTraits> getIndividualTraits() {
         return individuals;
     }
 
