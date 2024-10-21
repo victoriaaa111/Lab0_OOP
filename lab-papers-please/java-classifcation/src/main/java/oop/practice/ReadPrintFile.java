@@ -9,7 +9,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 public class ReadPrintFile {
-    // todo remove the variable
 
     //method to read data from file and store objects in list
     public ArrayList<IndividualTraits> ReadFile(String FilePath) {
