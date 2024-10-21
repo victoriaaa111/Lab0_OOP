@@ -1,57 +1,57 @@
 package oop.practice;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class Main {
-  public static void main(String[] args) throws IOException {
-    ObjectMapper mapper = new ObjectMapper();
-    File inputFile = new File("./lab-papers-please/java-classifcation/src/main/resources/test-input.json");
-    JsonNode data = mapper.readTree(inputFile).get("data");
 
-    Universe starWars = new Universe("starWars", new ArrayList<>());
-    Universe hitchhikers = new Universe("hitchHiker", new ArrayList<>());
-    Universe marvel = new Universe("marvel", new ArrayList<>());
-    Universe rings = new Universe("rings", new ArrayList<>());
-    Scanner scanner = new Scanner(System.in);
+  public static void main(String[] args){
+    ReadPrintFile inputFile = new ReadPrintFile();
+    String inputFilePath = "./lab-papers-please/java-classifcation/src/main/resources/input.json";
+    ArrayList<IndividualTraits> indivs = inputFile.ReadFile(inputFilePath);
 
-    for (JsonNode entry : data) {
-      String entryAsString = entry.toString();
-      System.out.println(entryAsString);
-      String userInput = scanner.nextLine();
-      switch (userInput) {
-        case "1":
-          starWars.individuals().add(entry);
-          break;
-        case "2":
-          hitchhikers.individuals().add(entry);
-          break;
-        case "3":
-          marvel.individuals().add(entry);
-          break;
-        case "4":
-          rings.individuals().add(entry);
-          break;
-        default:
-          System.out.println("Invalid input");
+    //create universe objects
+    StarWarsUniverse starWarsUniverse = new StarWarsUniverse();
+    MarvelUniverse marvelUniverse = new MarvelUniverse();
+    HitchhikersUniverse hitchhikersUniverse = new HitchhikersUniverse();
+    LordOfTheRingsUniverse lordOfTheRingsUniverse = new LordOfTheRingsUniverse();
+
+    //sort by universes
+    for(IndividualTraits individual:indivs){
+      boolean isStarWars = starWarsUniverse.checkIndividual(individual);
+      if(isStarWars){
+        continue; //if is part of starwars skips next universes and goes to next record
       }
+
+      boolean isMarvel = marvelUniverse.checkIndividual(individual);
+      if(isMarvel){
+        continue;
+      }
+
+      boolean isVogons = hitchhikersUniverse.checkVogons(individual);
+      if(isVogons){
+        continue;
+      }
+
+      boolean isBetelgeusean = hitchhikersUniverse.checkBetelgeusian(individual);
+      if(isBetelgeusean){
+        continue;
+      }
+
+      boolean isElf = lordOfTheRingsUniverse.checkElf(individual);
+      if(isElf){
+        continue;
+      }
+      lordOfTheRingsUniverse.checkDwarf(individual);
     }
 
-    scanner.close();
-    mapper.writeValue(new File("src/main/resources/output/starwars.json"), starWars);
-    mapper.writeValue(new File("src/main/resources/output/hitchhiker.json"), hitchhikers);
-    mapper.writeValue(new File("src/main/resources/output/rings.json"), rings);
-    mapper.writeValue(new File("src/main/resources/output/marvel.json"), marvel);
+    //object to add to json
+    View view = new View();
+
+    // output to json
+    view.printToJson("Star Wars", starWarsUniverse.getIndividuals(), "./lab-papers-please/output/starwars.json");
+    view.printToJson("Hitchhiker", hitchhikersUniverse.getIndividuals(), "./lab-papers-please/output/hitchhiker.json");
+    view.printToJson("Lord Of The Rings", lordOfTheRingsUniverse.getIndividuals(), "./lab-papers-please/output/rings.json");
+    view.printToJson("Marvel", marvelUniverse.getIndividuals(), "./lab-papers-please/output/marvel.json");
   }
 }
 
-record Universe(
-    String name,
-    List<JsonNode> individuals
-) { }

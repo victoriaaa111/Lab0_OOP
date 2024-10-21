@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/lab-papers-please/java-classifcation/java-classifcation.iml" filepath="$PROJECT_DIR$/lab-papers-please/java-classifcation/java-classifcation.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/oop-course-repo.iml" filepath="$PROJECT_DIR$/.idea/oop-course-repo.iml" />
     </modules>
   </component>
