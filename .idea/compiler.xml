@@ -9,5 +9,8 @@
         <module name="java-classifcation" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Lab1" target="23" />
+    </bytecodeTargetLevel>
   </component>
 </project>

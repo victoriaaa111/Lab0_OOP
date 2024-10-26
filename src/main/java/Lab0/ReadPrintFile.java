@@ -1,4 +1,4 @@
-package oop.practice;
+package Lab0;
 
 import java.io.File;
 import java.io.IOException;

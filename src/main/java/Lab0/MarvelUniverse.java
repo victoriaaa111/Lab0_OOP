@@ -1,4 +1,4 @@
-package oop.practice;
+package Lab0;
 import java.util.ArrayList;
 
 public class MarvelUniverse {

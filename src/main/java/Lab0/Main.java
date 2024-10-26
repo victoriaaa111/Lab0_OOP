@@ -1,4 +1,4 @@
-package oop.practice;
+package Lab0;
 
 import java.util.ArrayList;
 
@@ -6,7 +6,7 @@ public class Main {
 
   public static void main(String[] args){
     ReadPrintFile inputFile = new ReadPrintFile();
-    String inputFilePath = "./lab-papers-please/java-classifcation/src/main/resources/input.json";
+    String inputFilePath = "./src/main/resources/input.json";
     ArrayList<IndividualTraits> indivs = inputFile.ReadFile(inputFilePath);
 
     //create universe objects
@@ -48,10 +48,10 @@ public class Main {
     View view = new View();
 
     // output to json
-    view.printToJson("Star Wars", starWarsUniverse.getIndividuals(), "./lab-papers-please/output/starwars.json");
-    view.printToJson("Hitchhiker", hitchhikersUniverse.getIndividuals(), "./lab-papers-please/output/hitchhiker.json");
-    view.printToJson("Lord Of The Rings", lordOfTheRingsUniverse.getIndividuals(), "./lab-papers-please/output/rings.json");
-    view.printToJson("Marvel", marvelUniverse.getIndividuals(), "./lab-papers-please/output/marvel.json");
+    view.printToJson("Star Wars", starWarsUniverse.getIndividuals(), "./src/main/output/starwars.json");
+    view.printToJson("Hitchhiker", hitchhikersUniverse.getIndividuals(), "./src/main/output/hitchhiker.json");
+    view.printToJson("Lord Of The Rings", lordOfTheRingsUniverse.getIndividuals(), "./src/main/output/rings.json");
+    view.printToJson("Marvel", marvelUniverse.getIndividuals(), "./src/main/output/marvel.json");
   }
 }
 
