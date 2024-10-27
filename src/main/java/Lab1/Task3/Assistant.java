@@ -12,9 +12,13 @@ public class Assistant {
         this.assistantName = assistantName;
         assignedDisplays = new ArrayList<>();
     }
+
+    //add display objects to list
     public void assignDisplay(Display d) {
         assignedDisplays.add(d);
     }
+
+    //compare all displays
     public void assist(){
         for (int i = 0; i < assignedDisplays.size(); i++) {
             for(int j = i + 1; j<assignedDisplays.size(); j++) {
@@ -24,6 +28,7 @@ public class Assistant {
             }
         }
     }
+    //delete from list
     public Display buyDisplay(Display d){
         if(assignedDisplays.remove(d)){
             return d;
