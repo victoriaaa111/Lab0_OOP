@@ -6,7 +6,7 @@ public class Display {
     private float ppi;
     private String model;
 
-   public Display(int width, int height, float ppi, String model) {
+    public Display(int width, int height, float ppi, String model) {
        this.width = width;
        this.height = height;
        this.ppi = ppi;
@@ -24,16 +24,18 @@ public class Display {
             System.out.println("    The size of the " + this.model + " and "+ m.model + " displays is equal");
         }
     }
-    void compareSharpness(Display m){
+
+    public void compareSharpness(Display m){
         if(this.ppi < m.ppi){
-            System.out.println("    The size of the " + m.ppi + " is bigger than the size of the " + this.ppi + " display");
+            System.out.println("    The size of the " + m.model + " is bigger than the size of the " + this.model + " display");
         }else if(this.ppi > m.ppi){
-            System.out.println("    The size of the " + this.ppi + " is bigger than the size of the " + m.ppi + " display");
+            System.out.println("    The size of the " + this.model + " is bigger than the size of the " + m.model + " display");
         }else{
-            System.out.println("    The size of the " + this.ppi + " and "+ m.ppi + " displays is equal");
+            System.out.println("    The size of the " + this.model + " and "+ m.model + " displays is equal");
         }
     }
-    void compareWithMonitor(Display m){
+    public void compareWithMonitor(Display m){
+        System.out.println("\n# Comparing monitors " + m.model + " and " + this.model);
         System.out.println("\n By size:\n");
         compareSize(m);
         System.out.println("\n By sharpness:\n");
