@@ -37,11 +37,8 @@ public class Main {
                 break;
             case 3:
                 System.out.println("\nComparison by both size and sharpness:\n");
-                System.out.println("\n# Between " + display1.getModel() + " and " + display2.getModel()+"\n");
                 display1.compareWithMonitor(display2);
-                System.out.println("\n# Between " + display1.getModel() + " and " + display3.getModel()+"\n");
                 display1.compareWithMonitor(display3);
-                System.out.println("\n# Between " + display2.getModel() + " and " + display3.getModel()+"\n");
                 display2.compareWithMonitor(display3);
                 break;
             default:
