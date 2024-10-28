@@ -27,11 +27,11 @@ public class Display {
 
     public void compareSharpness(Display m){
         if(this.ppi < m.ppi){
-            System.out.println("    The size of the " + m.model + " is bigger than the size of the " + this.model + " display");
+            System.out.println("    The sharpness of the " + m.model + " is bigger than the size of the " + this.model + " display");
         }else if(this.ppi > m.ppi){
-            System.out.println("    The size of the " + this.model + " is bigger than the size of the " + m.model + " display");
+            System.out.println("    The sharpness of the " + this.model + " is bigger than the size of the " + m.model + " display");
         }else{
-            System.out.println("    The size of the " + this.model + " and "+ m.model + " displays is equal");
+            System.out.println("    The sharpness of the " + this.model + " and "+ m.model + " displays is equal");
         }
     }
     public void compareWithMonitor(Display m){
