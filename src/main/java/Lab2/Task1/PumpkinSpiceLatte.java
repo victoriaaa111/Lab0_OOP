@@ -1,10 +1,9 @@
 package Lab2.Task1;
 
 public class PumpkinSpiceLatte extends Cappuccino{
-    private final String name = "PumpkinSpiceLatte";
     private int mgOfPumpkinSpice;
-    public PumpkinSpiceLatte(int mgOfPumpkinSpice, Intensity coffeeIntensity, int mlOfMilk) {
-        super(coffeeIntensity, mlOfMilk);
+    public PumpkinSpiceLatte(Intensity coffeeIntensity, int mlOfMilk, int mgOfPumpkinSpice) {
+        super("PumpkinSpiceLatte", coffeeIntensity, mlOfMilk);
         this.mgOfPumpkinSpice = mgOfPumpkinSpice;
     }
 

@@ -1,11 +1,10 @@
 package Lab2.Task1;
 
 public class SyrupCappuccino extends Cappuccino {
-    private final String name = "SyrupCappuccino";
     private SyrupType syrup;
 
     public SyrupCappuccino(Intensity coffeeIntensity, int mlOfMilk, SyrupType syrup) {
-        super(coffeeIntensity, mlOfMilk);
+        super("SyrupCappuccino", coffeeIntensity, mlOfMilk);
         this.syrup = syrup;
     }
 

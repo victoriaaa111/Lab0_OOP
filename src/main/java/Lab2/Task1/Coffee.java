@@ -2,8 +2,9 @@ package Lab2.Task1;
 
 public class Coffee {
     private Intensity coffeeIntensity;
-    private final String name = "Coffee";
-    public Coffee(Intensity coffeeIntensity) {
+    protected final String name;
+    public Coffee(String name, Intensity coffeeIntensity) {
+        this.name = name;
         this.coffeeIntensity = coffeeIntensity;
     }
     public Intensity getCoffeeIntensity() {
