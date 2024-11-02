@@ -1,5 +1,7 @@
 package Lab2.Task2;
 
+import Lab2.Task1.Intensity;
+
 public class Cappuccino extends Coffee {
     private int mlOfMilk;
     public Cappuccino(String name, Intensity coffeeIntensity, int mlOfMilk) {

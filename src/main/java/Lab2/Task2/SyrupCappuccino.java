@@ -1,5 +1,8 @@
 package Lab2.Task2;
 
+import Lab2.Task1.Intensity;
+import Lab2.Task1.SyrupType;
+
 public class SyrupCappuccino extends Cappuccino {
     private SyrupType syrup;
 

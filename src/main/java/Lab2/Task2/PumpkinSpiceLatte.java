@@ -1,5 +1,7 @@
 package Lab2.Task2;
 
+import Lab2.Task1.Intensity;
+
 public class PumpkinSpiceLatte extends Cappuccino {
     private int mgOfPumpkinSpice;
     public PumpkinSpiceLatte(Intensity coffeeIntensity, int mlOfMilk, int mgOfPumpkinSpice) {
@@ -10,7 +12,7 @@ public class PumpkinSpiceLatte extends Cappuccino {
 
     public void printCoffeeDetails() {
         super.printCoffeeDetails();
-        System.out.println("Pumpkin Spice: " + mgOfPumpkinSpice +"mg \n");
+        System.out.println("Pumpkin Spice: " + mgOfPumpkinSpice +" mg \n");
     }
 
     @Override
