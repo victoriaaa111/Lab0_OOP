@@ -1,9 +1,6 @@
-package Lab2.Task2;
+package Lab2.CoffeeShop;
 
-import Lab2.Task1.Intensity;
-import Lab2.Task1.SyrupType;
-
-public class SyrupCappuccino extends Cappuccino {
+class SyrupCappuccino extends Cappuccino {
     private SyrupType syrup;
 
     public SyrupCappuccino(Intensity coffeeIntensity, int mlOfMilk, SyrupType syrup) {
@@ -15,12 +12,14 @@ public class SyrupCappuccino extends Cappuccino {
         super.printCoffeeDetails();
         System.out.println("Syrup: " + syrup);
     }
-    @Override
-    public String getName() {
-        return name;
-    }
+
 
     public SyrupType getSyrup() {
         return syrup;
+    }
+
+    public void makeSyrupCappuccino(Intensity coffeeIntensity, int mlOfMilk, SyrupType syrup) {
+        super.makeCappuccino("SyrupCappuccino", coffeeIntensity, mlOfMilk);
+        System.out.println("Adding " + syrup + " syrup.");
     }
 }

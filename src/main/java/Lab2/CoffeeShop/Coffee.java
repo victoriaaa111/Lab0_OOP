@@ -1,8 +1,6 @@
-package Lab2.Task3;
+package Lab2.CoffeeShop;
 
-import Lab2.Task1.Intensity;
-
-public class Coffee {
+class Coffee {
     private Intensity coffeeIntensity;
     protected final String name;
     public Coffee(String name, Intensity coffeeIntensity) {
@@ -21,7 +19,7 @@ public class Coffee {
         System.out.println(this.name + " intensity: " + coffeeIntensity);
     }
 
-    public void makeCoffee(){
+    public void makeCoffee(String name, Intensity coffeeIntensity) {
         System.out.println("\n#######");
         System.out.println("Making " + name + ":");
         System.out.println("Intensity set to: " + coffeeIntensity);

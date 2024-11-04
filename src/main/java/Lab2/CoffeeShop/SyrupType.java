@@ -1,5 +1,5 @@
-package Lab2.Task1;
+package Lab2.CoffeeShop;
 
-public enum SyrupType {
+enum SyrupType {
     MACADAMIA, VANILLA, COCONUT, CARAMEL, CHOCOLATE, POPCORN
 }

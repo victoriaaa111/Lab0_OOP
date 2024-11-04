@@ -1,42 +1,35 @@
-package Lab2.Task4;
+package Lab2.CoffeeShop;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-
-import Lab2.Task1.Intensity;
-import Lab2.Task1.SyrupType;
-
-import Lab2.Task3.Coffee;
-import Lab2.Task3.Cappuccino;
-import Lab2.Task3.Americano;
-import Lab2.Task3.SyrupCappuccino;
-import Lab2.Task3.PumpkinSpiceLatte;
 
 public class Barista {
     private final Scanner scanner = new Scanner(System.in);
 
     public void processExistingCoffees() {
         List<Coffee> orders = new ArrayList<>();
-        orders.add(new Cappuccino("Cappuccino", Intensity.NORMAL, 50));
-        orders.add(new Americano(Intensity.STRONG, 40));
+        Coffee coffee1 = new Cappuccino("Cappuccino", Intensity.NORMAL, 50);
+        Coffee coffee2 = new Americano(Intensity.STRONG, 40);
+        orders.add(coffee1);
+        orders.add(coffee2);
         System.out.println("Processing existing coffee order:");
         for (Coffee coffee : orders) {
             if (coffee instanceof Cappuccino) {
-                Cappuccino.makeCappuccino(coffee.getName(), coffee.getCoffeeIntensity(), ((Cappuccino) coffee).getMlOfMilk());
-                ((Cappuccino) coffee).printCoffeeDetails();
+                ((Cappuccino) coffee).makeCappuccino(coffee.getName(), coffee.getCoffeeIntensity(), ((Cappuccino) coffee).getMlOfMilk());
+                coffee.printCoffeeDetails();
             }
             if (coffee instanceof Americano) {
-                Americano.makeAmericano(coffee.getCoffeeIntensity(), ((Americano) coffee).getMlOfWater());
-                ((Americano) coffee).printCoffeeDetails();
+                ((Americano) coffee).makeAmericano(coffee.getCoffeeIntensity(), ((Americano) coffee).getMlOfWater());
+                coffee.printCoffeeDetails();
             }
             if (coffee instanceof SyrupCappuccino) {
-                SyrupCappuccino.makeSyrupCappuccino(coffee.getCoffeeIntensity(), ((SyrupCappuccino) coffee).getMlOfMilk(), ((SyrupCappuccino) coffee).getSyrup());
-                ((SyrupCappuccino) coffee).printCoffeeDetails();
+                ((SyrupCappuccino) coffee).makeSyrupCappuccino(coffee.getCoffeeIntensity(), ((SyrupCappuccino) coffee).getMlOfMilk(), ((SyrupCappuccino) coffee).getSyrup());
+                coffee.printCoffeeDetails();
             }
             if (coffee instanceof PumpkinSpiceLatte) {
-                PumpkinSpiceLatte.makePumpkinSpiceLatte(coffee.getCoffeeIntensity(), ((PumpkinSpiceLatte) coffee).getMlOfMilk(), ((PumpkinSpiceLatte) coffee).getMgOfPumpkinSpice());
-                ((PumpkinSpiceLatte) coffee).printCoffeeDetails();
+                ((PumpkinSpiceLatte) coffee).makePumpkinSpiceLatte(coffee.getCoffeeIntensity(), ((PumpkinSpiceLatte) coffee).getMlOfMilk(), ((PumpkinSpiceLatte) coffee).getMgOfPumpkinSpice());
+                coffee.printCoffeeDetails();
             }
 
         }
@@ -81,7 +74,7 @@ public class Barista {
         }
     }
 
-    private Cappuccino orderCappuccino(){
+    private Coffee orderCappuccino(){
         Intensity intensity = null;
         System.out.println("Choose intensity for cappuccino: ");
         System.out.println("1.LIGHT");
@@ -105,9 +98,11 @@ public class Barista {
         scanner.nextLine();
         System.out.println("Enter milk quantity in ml:");
         int ml = scanner.nextInt();
-        return Cappuccino.makeCappuccino("Cappuccino", intensity, ml);
+        Coffee cappuccino = new Cappuccino("Cappuccino", intensity, ml);
+        ((Cappuccino) cappuccino).makeCappuccino(cappuccino.getName(), intensity, ml);
+        return cappuccino;
     }
-    private Americano orderAmericano(){
+    private Coffee orderAmericano(){
         Intensity intensity = null;
         System.out.println("Choose intensity for americano: ");
         System.out.println("1.LIGHT");
@@ -131,10 +126,12 @@ public class Barista {
         scanner.nextLine();
         System.out.println("Enter water quantity in ml:");
         int ml = scanner.nextInt();
-        return Americano.makeAmericano(intensity, ml);
+        Coffee americano = new Americano(intensity, ml);
+        ((Americano) americano).makeAmericano(intensity, ml);
+        return americano;
     }
 
-    private SyrupCappuccino orderSyrupCappuccino(){
+    private Coffee orderSyrupCappuccino(){
         Intensity intensity = null;
         SyrupType syrup = null;
         System.out.println("Choose intensity for syrup cappuccino: ");
@@ -191,9 +188,11 @@ public class Barista {
                                         System.out.println("Invalid choice.");
 
         }
-        return SyrupCappuccino.makeSyrupCappuccino(intensity, ml, syrup);
+        Coffee syrupCappuccino = new SyrupCappuccino( intensity, ml, syrup);
+        ((SyrupCappuccino) syrupCappuccino).makeSyrupCappuccino(intensity, ml, syrup);
+        return syrupCappuccino;
     }
-    private PumpkinSpiceLatte orderPumpkinSpiceLatte(){
+    private Coffee orderPumpkinSpiceLatte(){
         Intensity intensity = null;
         System.out.println("Choose intensity for cappuccino: ");
         System.out.println("1.LIGHT");
@@ -220,7 +219,9 @@ public class Barista {
         scanner.nextLine();
         System.out.println("Enter pumpkin spice quantity in mg:");
         int mg = scanner.nextInt();
-        return PumpkinSpiceLatte.makePumpkinSpiceLatte(intensity, ml, mg);
+        Coffee pumpkinSpiceLatte = new PumpkinSpiceLatte( intensity, ml, mg);
+        ((PumpkinSpiceLatte) pumpkinSpiceLatte).makePumpkinSpiceLatte(intensity, ml, mg);
+        return pumpkinSpiceLatte;
     }
 
 }

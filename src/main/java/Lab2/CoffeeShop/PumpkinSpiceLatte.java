@@ -1,8 +1,7 @@
-package Lab2.Task2;
+package Lab2.CoffeeShop;
 
-import Lab2.Task1.Intensity;
 
-public class PumpkinSpiceLatte extends Cappuccino {
+class PumpkinSpiceLatte extends Cappuccino {
     private int mgOfPumpkinSpice;
     public PumpkinSpiceLatte(Intensity coffeeIntensity, int mlOfMilk, int mgOfPumpkinSpice) {
         super("PumpkinSpiceLatte", coffeeIntensity, mlOfMilk);
@@ -15,12 +14,13 @@ public class PumpkinSpiceLatte extends Cappuccino {
         System.out.println("Pumpkin Spice: " + mgOfPumpkinSpice +" mg \n");
     }
 
-    @Override
-    public String getName() {
-        return name;
-    }
 
     public int getMgOfPumpkinSpice() {
         return mgOfPumpkinSpice;
+    }
+
+    public void makePumpkinSpiceLatte(Intensity coffeeIntensity, int mlOfMilk, int mgOfPumpkinSpice) {
+        super.makeCappuccino("PumpkinSpiceLatte", coffeeIntensity, mlOfMilk);
+        System.out.println("Adding " + mgOfPumpkinSpice + " mg of pumpkin spice.");
     }
 }

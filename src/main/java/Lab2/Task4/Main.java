@@ -1,6 +1,7 @@
 package Lab2.Task4;
 
 import java.util.Scanner;
+import Lab2.CoffeeShop.Barista;
 
 public class Main {
     public static void main(String[] args) {
