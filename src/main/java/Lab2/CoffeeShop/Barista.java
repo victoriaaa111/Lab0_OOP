@@ -16,19 +16,19 @@ public class Barista {
         System.out.println("Processing existing coffee order:");
         for (Coffee coffee : orders) {
             if (coffee instanceof Cappuccino) {
-                ((Cappuccino) coffee).makeCappuccino(coffee.getName(), coffee.getCoffeeIntensity(), ((Cappuccino) coffee).getMlOfMilk());
+                ((Cappuccino) coffee).makeCappuccino();
                 coffee.printCoffeeDetails();
             }
             if (coffee instanceof Americano) {
-                ((Americano) coffee).makeAmericano(coffee.getCoffeeIntensity(), ((Americano) coffee).getMlOfWater());
+                ((Americano) coffee).makeAmericano();
                 coffee.printCoffeeDetails();
             }
             if (coffee instanceof SyrupCappuccino) {
-                ((SyrupCappuccino) coffee).makeSyrupCappuccino(coffee.getCoffeeIntensity(), ((SyrupCappuccino) coffee).getMlOfMilk(), ((SyrupCappuccino) coffee).getSyrup());
+                ((SyrupCappuccino) coffee).makeSyrupCappuccino();
                 coffee.printCoffeeDetails();
             }
             if (coffee instanceof PumpkinSpiceLatte) {
-                ((PumpkinSpiceLatte) coffee).makePumpkinSpiceLatte(coffee.getCoffeeIntensity(), ((PumpkinSpiceLatte) coffee).getMlOfMilk(), ((PumpkinSpiceLatte) coffee).getMgOfPumpkinSpice());
+                ((PumpkinSpiceLatte) coffee).makePumpkinSpiceLatte();
                 coffee.printCoffeeDetails();
             }
 
@@ -99,7 +99,7 @@ public class Barista {
         System.out.println("Enter milk quantity in ml:");
         int ml = scanner.nextInt();
         Coffee cappuccino = new Cappuccino("Cappuccino", intensity, ml);
-        ((Cappuccino) cappuccino).makeCappuccino(cappuccino.getName(), intensity, ml);
+        ((Cappuccino) cappuccino).makeCappuccino();
         return cappuccino;
     }
     private Coffee orderAmericano(){
@@ -127,7 +127,7 @@ public class Barista {
         System.out.println("Enter water quantity in ml:");
         int ml = scanner.nextInt();
         Coffee americano = new Americano(intensity, ml);
-        ((Americano) americano).makeAmericano(intensity, ml);
+        ((Americano) americano).makeAmericano();
         return americano;
     }
 
@@ -189,7 +189,7 @@ public class Barista {
 
         }
         Coffee syrupCappuccino = new SyrupCappuccino( intensity, ml, syrup);
-        ((SyrupCappuccino) syrupCappuccino).makeSyrupCappuccino(intensity, ml, syrup);
+        ((SyrupCappuccino) syrupCappuccino).makeSyrupCappuccino();
         return syrupCappuccino;
     }
     private Coffee orderPumpkinSpiceLatte(){
@@ -220,7 +220,7 @@ public class Barista {
         System.out.println("Enter pumpkin spice quantity in mg:");
         int mg = scanner.nextInt();
         Coffee pumpkinSpiceLatte = new PumpkinSpiceLatte( intensity, ml, mg);
-        ((PumpkinSpiceLatte) pumpkinSpiceLatte).makePumpkinSpiceLatte(intensity, ml, mg);
+        ((PumpkinSpiceLatte) pumpkinSpiceLatte).makePumpkinSpiceLatte();
         return pumpkinSpiceLatte;
     }
 

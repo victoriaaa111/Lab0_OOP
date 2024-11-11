@@ -14,9 +14,12 @@ class Americano extends Coffee{
         System.out.println("Amount of water in " + this.name + " : " + mlOfWater + " ml");
     }
 
-    public void makeAmericano(Intensity coffeeIntensity, int mlOfWater) {
-        super.makeCoffee(this.name, coffeeIntensity);
-        System.out.println("Adding " + mlOfWater + "ml of water.");
+    public void make(){
+        super.make();
+        System.out.println("Adding " + this.mlOfWater + "ml of water.");
+    }
+    public void makeAmericano() {
+        this.make();
     }
 
 

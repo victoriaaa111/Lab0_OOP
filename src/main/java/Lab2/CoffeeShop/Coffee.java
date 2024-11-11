@@ -19,7 +19,12 @@ class Coffee {
         System.out.println(this.name + " intensity: " + coffeeIntensity);
     }
 
-    public void makeCoffee(String name, Intensity coffeeIntensity) {
+    public void make(){
+        System.out.println("\n#######");
+        System.out.println("Making " + this.name + ":");
+        System.out.println("Intensity set to: " + this.coffeeIntensity);
+    }
+    public void makeCoffee() {
         System.out.println("\n#######");
         System.out.println("Making " + name + ":");
         System.out.println("Intensity set to: " + coffeeIntensity);

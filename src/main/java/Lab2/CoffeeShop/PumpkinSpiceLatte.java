@@ -19,8 +19,12 @@ class PumpkinSpiceLatte extends Cappuccino {
         return mgOfPumpkinSpice;
     }
 
-    public void makePumpkinSpiceLatte(Intensity coffeeIntensity, int mlOfMilk, int mgOfPumpkinSpice) {
-        super.makeCappuccino("PumpkinSpiceLatte", coffeeIntensity, mlOfMilk);
-        System.out.println("Adding " + mgOfPumpkinSpice + " mg of pumpkin spice.");
+    public void make(){
+        super.make();
+        System.out.println("Adding " + this.mgOfPumpkinSpice + " mg of pumpkin spice.");
+    }
+
+    public void makePumpkinSpiceLatte() {
+        this.make();
     }
 }

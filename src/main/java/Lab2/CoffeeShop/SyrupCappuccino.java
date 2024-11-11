@@ -18,8 +18,13 @@ class SyrupCappuccino extends Cappuccino {
         return syrup;
     }
 
-    public void makeSyrupCappuccino(Intensity coffeeIntensity, int mlOfMilk, SyrupType syrup) {
-        super.makeCappuccino("SyrupCappuccino", coffeeIntensity, mlOfMilk);
-        System.out.println("Adding " + syrup + " syrup.");
+    public void make(){
+        super.make();
+        System.out.println("Adding " + this.syrup + " syrup.");
+    }
+
+
+    public void makeSyrupCappuccino() {
+        this.make();
     }
 }

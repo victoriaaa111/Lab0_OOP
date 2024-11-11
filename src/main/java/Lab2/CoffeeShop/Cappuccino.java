@@ -17,8 +17,11 @@ class Cappuccino extends Coffee {
         return mlOfMilk;
     }
 
-    public void makeCappuccino(String name,Intensity coffeeIntensity, int mlOfMilk) {
-        super.makeCoffee(name, coffeeIntensity);
-        System.out.println("Adding " + mlOfMilk + "ml of milk.");
+    public void make(){
+        super.make();
+        System.out.println("Adding " + this.mlOfMilk + "ml of milk.");
+    }
+    public void makeCappuccino() {
+        this.make();
     }
 }
