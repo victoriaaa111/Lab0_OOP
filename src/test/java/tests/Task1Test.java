@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
-public class QueueTest {
+public class Task1Test {
     @Test
     void testArrayImplementation() {
         ArrayImplementation<Integer> queue = new ArrayImplementation<>();
