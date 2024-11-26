@@ -1,0 +1,12 @@
+package Lab3.Task2;
+
+public class GasStation implements Refuelable{
+    private static int gasCarsCount = 0;
+    public void refuel(String carId){
+        System.out.println("Refueling gas car " + carId + ".");
+        gasCarsCount++;
+    }
+    public static int getGasCarsCount(){
+        return gasCarsCount;
+    }
+}
