@@ -6,7 +6,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
         if (args.length == 0) {
-            System.out.println("Usage: java Lab1.Task2.Main <file>");
+            System.out.println("Usage: java Lab1.Lab3.Task2.Main <file>");
             return;
         }
         //get filepath from args passed to main
