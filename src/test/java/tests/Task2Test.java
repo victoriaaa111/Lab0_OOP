@@ -16,15 +16,15 @@ public class Task2Test {
         RobotDinner robotDinner1 = new RobotDinner();
         RobotDinner robotDinner2 = new RobotDinner();
 
-        peopleDinner1.serveDinner("1");
-        peopleDinner1.serveDinner("2");
-        peopleDinner2.serveDinner("3");
+        peopleDinner1.serveDinner(1);
+        peopleDinner1.serveDinner(2);
+        peopleDinner2.serveDinner(3);
         Assertions.assertEquals(3, PeopleDinner.getPeopleServedCount());
 
-        robotDinner2.serveDinner("4");
-        robotDinner1.serveDinner("5");
-        robotDinner2.serveDinner("6");
-        robotDinner1.serveDinner("7");
+        robotDinner2.serveDinner(4);
+        robotDinner1.serveDinner(5);
+        robotDinner2.serveDinner(6);
+        robotDinner1.serveDinner(7);
         Assertions.assertEquals(4, RobotDinner.getRobotsServedCount());
     }
 
@@ -35,14 +35,14 @@ public class Task2Test {
         GasStation gasStation1 = new GasStation();
         GasStation gasStation2 = new GasStation();
 
-        electricStation1.refuel("1");
-        electricStation2.refuel("2");
-        electricStation2.refuel("3");
+        electricStation1.refuel(1);
+        electricStation2.refuel(2);
+        electricStation2.refuel(3);
 
         Assertions.assertEquals(3, ElectricStation.getElectricCarsCount());
 
-        gasStation1.refuel("4");
-        gasStation2.refuel("5");
+        gasStation1.refuel(4);
+        gasStation2.refuel(5);
 
         Assertions.assertEquals(2, GasStation.getGasCarsCount());
     }

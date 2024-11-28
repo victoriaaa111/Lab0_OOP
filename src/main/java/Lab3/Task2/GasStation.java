@@ -2,7 +2,7 @@ package Lab3.Task2;
 
 public class GasStation implements Refuelable{
     private static int gasCarsCount = 0;
-    public void refuel(String carId){
+    public void refuel(int carId){
         System.out.println("Refueling gas car " + carId + ".");
         gasCarsCount++;
     }
