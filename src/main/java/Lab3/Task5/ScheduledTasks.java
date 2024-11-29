@@ -29,7 +29,6 @@ public class ScheduledTasks {
     private long lastProcessedTime = System.currentTimeMillis();
     private static final long INACTIVITY_THRESHOLD = 5000;  // 5 seconds of inactivity
 
-
     public void startScheduledTasks() {
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(2);
 
@@ -47,7 +46,7 @@ public class ScheduledTasks {
         executor.scheduleWithFixedDelay(() -> {
             long currentTime = System.currentTimeMillis();
             if (currentTime - lastProcessedTime > INACTIVITY_THRESHOLD) {
-                System.out.println("No new files processed in the last 6 seconds. Stopping the program.");
+                System.out.println("No new files processed in the last 5 seconds. Stopping the program.");
                 Stats stats = new Stats();
                 stats.printStats();
                 executor.shutdown();
