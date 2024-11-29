@@ -19,10 +19,10 @@ public class Task3Test {
         Dineable peopleDinner = new PeopleDinner();
         Dineable robotDinner = new RobotDinner();
 
-        Car car1 = new Car(1,Car.Types.GAS, Car.PassengerTypes.PEOPLE, true, 42);
-        Car car2 = new Car(2, Car.Types.ELECTRIC, Car.PassengerTypes.PEOPLE, true, 22);
-        Car car3 = new Car(3, Car.Types.ELECTRIC, Car.PassengerTypes.ROBOTS, true, 12);
-        Car car4 = new Car(4, Car.Types.GAS, Car.PassengerTypes.PEOPLE, false, 65);
+        Car car1 = new Car(1, "GAS", "PEOPLE", true, 42);
+        Car car2 = new Car(2, "ELECTRIC", "PEOPLE", true, 22);
+        Car car3 = new Car(3, "ELECTRIC", "ROBOTS", true, 12);
+        Car car4 = new Car(4, "GAS", "PEOPLE", false, 65);
 
         Queue<Car> queueArray = new ArrayImplementation<Car>();
         Queue<Car> queueDoubleStack = new DoubleStackImplementation<Car>();
@@ -63,8 +63,8 @@ public class Task3Test {
         Refuelable gasStation = new GasStation();
         Dineable peopleDinner = new PeopleDinner();
 
-        Car car1 = new Car(1,Car.Types.GAS, Car.PassengerTypes.PEOPLE, true, 42);
-        Car car2 = new Car(2, Car.Types.GAS, Car.PassengerTypes.PEOPLE, false, 65);
+        Car car1 = new Car(1, "GAS", "PEOPLE", true, 42);
+        Car car2 = new Car(2, "GAS", "PEOPLE", false, 65);
 
         Queue<Car> queueDoubleStack = new DoubleStackImplementation<Car>();
 

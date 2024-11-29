@@ -1,4 +1,4 @@
-package Lab3;
+package Lab3.Task4;
 
 import Lab3.Task3.CarStation;
 import Lab3.Task3.Car;
@@ -17,16 +17,16 @@ public class Semaphore {
     }
 
     public void sortCars(Car car){
-        if(car.getPassengers() == Car.PassengerTypes.PEOPLE && car.getType() == Car.Types.GAS){
+        if(car.getPassengers().equals("PEOPLE") && car.getType().equals("GAS")){
             this.peopleGas.addCar(car);
             System.out.println("Car nr. " + car.getId()+ " was assigned to People and Gas Car Station");
-        }else if(car.getPassengers() == Car.PassengerTypes.PEOPLE && car.getType() == Car.Types.ELECTRIC){
+        }else if(car.getPassengers().equals("PEOPLE") && car.getType().equals("ELECTRIC")){
             this.peopleElectric.addCar(car);
             System.out.println("Car nr. " + car.getId()+ " was assigned to People and Electric Car Station");
-        }else if(car.getPassengers() == Car.PassengerTypes.ROBOTS && car.getType() == Car.Types.ELECTRIC){
+        }else if(car.getPassengers().equals("ROBOTS") && car.getType().equals("ELECTRIC")){
             this.robotsElectric.addCar(car);
             System.out.println("Car nr. " + car.getId()+ " was assigned to Robots and Electric Car Station");
-        }else if(car.getPassengers() == Car.PassengerTypes.ROBOTS && car.getType() == Car.Types.GAS){
+        }else if(car.getPassengers().equals("ROBOTS") && car.getType().equals("GAS")){
             this.robotsGas.addCar(car);
             System.out.println("Car nr. " + car.getId()+ " was assigned to Robots and Gas Car Station");
         }

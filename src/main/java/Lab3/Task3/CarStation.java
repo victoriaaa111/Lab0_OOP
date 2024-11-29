@@ -21,7 +21,7 @@ public class CarStation {
             car = this.queue.peek();
             System.out.println("\n ###############");
             System.out.println("Serving car " + car.getId());
-            if(car.isDining()){
+            if(car.getIsDining()){
                 diningService.serveDinner(car.getId());
             }
             refuelingService.refuel(car.getId());
