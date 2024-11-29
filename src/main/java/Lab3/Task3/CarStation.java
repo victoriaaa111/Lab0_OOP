@@ -8,6 +8,10 @@ public class CarStation {
     private Dineable diningService;
     private Refuelable refuelingService;
     private Queue<Car> queue;
+    private static int electricConsumption = 0;
+    private static int gasConsumption = 0;
+    private static int totalPeople = 0;
+    private static int totalRobots = 0;
 
     public CarStation(Dineable diningService, Refuelable refuelingService, Queue<Car> queue) {
         this.diningService = diningService;
@@ -25,6 +29,16 @@ public class CarStation {
                 diningService.serveDinner(car.getId());
             }
             refuelingService.refuel(car.getId());
+            if(car.getType().equals("GAS")){
+                gasConsumption += car.getConsumption();
+            }else if(car.getType().equals("ELECTRIC")){
+                electricConsumption += car.getConsumption();
+            }
+            if(car.getPassengers().equals("PEOPLE")){
+                totalPeople++;
+            }else if(car.getPassengers().equals("ROBOTS")){
+                totalRobots++;
+            }
             System.out.println("Finished serving car " + car.getId() + ".");
             this.queue.dequeue();
         }
@@ -45,5 +59,21 @@ public class CarStation {
 
     public Queue<Car> getQueue() {
         return queue;
+    }
+
+    public static int getElectricConsumption() {
+        return electricConsumption;
+    }
+
+    public static int getGasConsumption() {
+        return gasConsumption;
+    }
+
+    public static int getTotalPeople() {
+        return totalPeople;
+    }
+
+    public static int getTotalRobots() {
+        return totalRobots;
     }
 }
