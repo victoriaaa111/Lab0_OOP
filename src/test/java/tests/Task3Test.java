@@ -52,10 +52,10 @@ public class Task3Test {
         Assertions.assertTrue(carStationPeopleElectric.getQueue().isEmpty());
         Assertions.assertTrue(carStationRobotsElectric.getQueue().isEmpty());
 
-        Assertions.assertEquals(2, ((PeopleDinner) carStationPeopleGas.getDiningService()).getPeopleServedCount());
-        Assertions.assertEquals(2, ((ElectricStation) carStationPeopleElectric.getRefuelingService()).getElectricCarsCount());
-        Assertions.assertEquals(2, ((GasStation) carStationPeopleGas.getRefuelingService()).getGasCarsCount());
-        Assertions.assertEquals(1, ((RobotDinner) carStationRobotsElectric.getDiningService()).getRobotsServedCount());
+        Assertions.assertEquals(2, PeopleDinner.getPeopleServedCount());
+        Assertions.assertEquals(2, ElectricStation.getElectricCarsCount());
+        Assertions.assertEquals(2, GasStation.getGasCarsCount());
+        Assertions.assertEquals(1, RobotDinner.getRobotsServedCount());
     }
 
     @Test
