@@ -22,10 +22,10 @@ import java.util.Comparator;
 
 public class ScheduledTasks {
 
-    private ObjectMapper mapper = new ObjectMapper();
-    private FolderRead folderRead = new FolderRead();
-    private Semaphore semaphore = initSemaphore();
-    private List<String> processed = new ArrayList<>();
+    private final ObjectMapper mapper = new ObjectMapper();
+    private final FolderRead folderRead = new FolderRead();
+    private final Semaphore semaphore = initSemaphore();
+    private final List<String> processed = new ArrayList<>();
 
     private long lastProcessedTime = System.currentTimeMillis();
     private static final long INACTIVITY_THRESHOLD = 5000;  // 5 seconds of inactivity

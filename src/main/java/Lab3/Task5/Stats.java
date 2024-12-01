@@ -7,7 +7,7 @@ public class Stats {
     private final int totalElectricCars;
     private final int totalGasCars;
     private final int totalPeople;
-    private int totalRobots;
+    private final int totalRobots;
     private final int totalDining;
     private final int totalNotDining;
     private final int consumptionElectric;

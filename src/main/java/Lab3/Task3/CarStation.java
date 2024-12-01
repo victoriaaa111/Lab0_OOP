@@ -5,9 +5,9 @@ import Lab3.Task2.Refuelable;
 import Lab3.Task1.Queue;
 
 public class CarStation {
-    private Dineable diningService;
-    private Refuelable refuelingService;
-    private Queue<Car> queue;
+    private final Dineable diningService;
+    private final Refuelable refuelingService;
+    private final Queue<Car> queue;
     private static int electricConsumption = 0;
     private static int gasConsumption = 0;
     private static int totalPeople = 0;

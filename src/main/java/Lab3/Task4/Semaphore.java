@@ -4,10 +4,10 @@ import Lab3.Task3.CarStation;
 import Lab3.Task3.Car;
 
 public class Semaphore {
-    private CarStation peopleGas;
-    private CarStation robotsGas;
-    private CarStation peopleElectric;
-    private CarStation robotsElectric;
+    private final CarStation peopleGas;
+    private final CarStation robotsGas;
+    private final CarStation peopleElectric;
+    private final CarStation robotsElectric;
 
     public Semaphore(CarStation peopleGas, CarStation peopleElectric, CarStation robotsGas, CarStation robotsElectric) {
         this.peopleGas = peopleGas;

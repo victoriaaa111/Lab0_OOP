@@ -1,8 +1,8 @@
 package Lab3.Task1;
 
 public class DoubleStackImplementation<T> implements Queue<T>{
-    private Stack<T> inStack;
-    private Stack<T> outStack;
+    private final Stack<T> inStack;
+    private final Stack<T> outStack;
 
     public DoubleStackImplementation() {
         inStack = new Stack<>();
