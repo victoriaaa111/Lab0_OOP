@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.Comparator;
 
 public class ScheduledTasks {
 
@@ -62,17 +63,7 @@ public class ScheduledTasks {
             return;
         }
 
-        // sort files based on the car ID
-        Arrays.sort(list, (file1, file2) -> {
-            try {
-                Car car1 = mapper.readValue(file1, Car.class);
-                Car car2 = mapper.readValue(file2, Car.class);
-                return Integer.compare(car1.getId(), car2.getId());
-            } catch (IOException e) {
-                e.printStackTrace();
-                return 0;
-            }
-        });
+        Arrays.sort(list, Comparator.comparingLong(File::lastModified));
 
         boolean filesProcessed = false;
 
